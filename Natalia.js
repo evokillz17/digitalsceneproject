@@ -1,3 +1,5 @@
+penColor("blue");
+dot(500);
 function drawAllSnowmen() {
   for (var i = 0; i < 2; i++) {
     moveTo(randomNumber(0, 320), randomNumber(0, 400));
