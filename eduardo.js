@@ -56,7 +56,7 @@ function snowFloor() {
  penDown();
  moveForward(320);
 }
-
+//darws Aurora lights
 function drawAuroralights(){
   for (var i = 0; i < 65; i++) {
   penUp();
