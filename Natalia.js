@@ -2,7 +2,7 @@ penColor("blue");
 dot(500);
 function drawAllSnowmen() {
   for (var i = 0; i < 2; i++) {
-    moveTo(randomNumber(0, 320), randomNumber(0, 400));
+    moveTo(randomNumber(0, 318), 415);
     drawSnowmen();
   }
 }
@@ -40,8 +40,8 @@ function drawSnow() {
   dot(6);
 }
 function drawAllSnow() {
-  for (var i = 0; i < 100; i++) {
-    moveTo(randomNumber(0, 350), randomNumber(0, 400));
+  for (var i = 0; i < 130; i++) {
+    moveTo(randomNumber(-5, 350), randomNumber(-5, 400));
     drawSnow();
   }
 }
