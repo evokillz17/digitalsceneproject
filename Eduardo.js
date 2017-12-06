@@ -11,6 +11,7 @@ function drawMountain(location) {
  moveForward(250);
  colorMountain();
  drawTip();
+ penUp();
 }
 //draws all mountains
 function drawAllmountains() {
@@ -28,6 +29,7 @@ function drawTip() {
   moveBackward(55);
   turnTo(206);
   moveForward(30);
+  penUp();
 }
 function colorMountain() {
   penWidth(40);
@@ -55,14 +57,15 @@ function snowFloor() {
  turnTo(90);
  penDown();
  moveForward(320);
+ penUp();
 }
 //darws Aurora lights
 function drawAuroralights(){
   for (var i = 0; i < 65; i++) {
   penUp();
-  moveTo(randomNumber(-10,320),randomNumber(60,100 ));
+  moveTo(randomNumber(-5,320),randomNumber(80,110 ));
   turnTo(randomNumber(175,180));
-  drawRay(randomNumber(70,100)); 
+  drawRay(randomNumber(80,100)); 
   }
 }
 //draws rays for aurora
@@ -71,7 +74,7 @@ function drawRay(size){
   penWidth(randomNumber(3,10));
   penRGB(randomNumber(100, 190), randomNumber(120, 196), randomNumber(50, 198),0.6);
   turnTo(0);
-  arcLeft(30,size);
+  arcLeft(35,size);
   arcRight(60,size);
   arcLeft(60,size);
   arcRight(60,size);
@@ -86,9 +89,3 @@ function allStars() {
   dot(randomNumber(3,5 )); 
   }
 }
-
-drawBackground();
-allStars();
-drawAllmountains(10);
-drawAuroralights();
-snowFloor();
