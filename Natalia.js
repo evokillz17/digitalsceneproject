@@ -18,7 +18,7 @@ function drawBase() {
   moveForward(50);
 }
 function drawBody() {
-  dot(randomNumber(20, 23));
+  dot(randomNumber(20, 26));
   moveForward(36);
 }
 function drawHead() {
@@ -37,10 +37,10 @@ function drawEyes() {
 }
 function drawSnow() {
   penRGB(255, 255, 255, 0.43);
-  dot(6);
+  dot(randomNumber(1, 6));
 }
 function drawAllSnow() {
-  for (var i = 0; i < 130; i++) {
+  for (var i = 0; i < 100; i++) {
     moveTo(randomNumber(-5, 350), randomNumber(-5, 430));
     drawSnow();
   }
