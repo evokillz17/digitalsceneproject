@@ -1,17 +1,14 @@
-//Order matters.  Must be pine trees 1st then the snowflakes.  
-drawAllPineTrees();
-drawAllSnowflakes();
-
 //The loop is for as many snowflakes you want to draw. 
 //And it is all in random places because of the "moveTo"
 function drawAllSnowflakes() {
-  for (var i = 0; i < 80; i++) {
+  for (var i = 0; i < 50; i++) {
     penUp();
-    moveTo(randomNumber(0,320), randomNumber(0,260));
+    moveTo(randomNumber(0,325), randomNumber(0,360));
     penDown();
     drawSnowflake();
   }
 }
+
 //The proccess of drawing the snowflake. (I wouldn't mess with the order)
 function drawSnowflake() {
   penRGB(255, 255, 255, 0.6);
@@ -63,11 +60,19 @@ function resetToCenter(legLength) {
 }
 
 //The loop here,  is how many pine trees you will want 
-function drawAllPineTrees() {
+function drawAllpinetrees() {
   for (var i = 0; i < 3; i++) {
-    //Trunk of the tree
+    penUp();
+    moveTo(randomNumber(0, 318), 415);
+    turnTo(0);
+    drawPinetree();
+  }
+
+}
+//draws one pine tree
+function drawPinetree() {
     drawTrunk(randomNumber(20,40 ));
-    //Leaves 
+    turnTo(0);
     drawLeaves();
     backToTheTop();
     drawLeaves();
@@ -75,13 +80,11 @@ function drawAllPineTrees() {
     drawLeaves();
     penUp();
     turnRight(90);
-  }
-
 }
+
 //Every trunk has a different width.  Because I put the random number generator so you don't have to change that parameter.  
 function drawTrunk(trunkWidth) {
   penUp();
-  moveTo(randomNumber(0, 315), randomNumber(405, 450));
   penRGB(124, 89, 8, 1);
   penWidth(trunkWidth);
   penDown();
@@ -91,6 +94,7 @@ function drawTrunk(trunkWidth) {
 function drawLeaves() {
   penRGB(8, 124, 10, 1);
   penWidth(25);
+  penDown();
   moveForward(35);
   turnLeft(135);
   moveForward(35);
@@ -109,5 +113,4 @@ function backToTheTop() {
   turnRight(90);
   moveForward(30);
   turnLeft(90);
-  penDown();
 }
