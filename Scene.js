@@ -82,7 +82,7 @@ function drawRay(size){
 }
 //draws background stars
 function allStars() {
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 25; i++) {
   penRGB(252, 226, 95, 0.5);
   penUp();
   moveTo(randomNumber(-10,320),randomNumber(-5,415 ));
