@@ -90,7 +90,6 @@ function allStars() {
   }
 }
 
-//draws all the Snowmen
 function drawAllSnowmen() {
   for (var i = 0; i < 2; i++) {
     moveTo(randomNumber(0, 318), 410);
@@ -99,30 +98,24 @@ function drawAllSnowmen() {
    
   }
 }
-//Draws one snowmen
 function drawSnowmen() {
   penRGB(236, 240, 241, 1);
-  drawBase();
-  drawBody();
-  drawHead();
+  drawBase(randomNumber(30, 40));
+  drawBody(randomNumber(20, 26));
+  drawHead(randomNumber(16, 19));
   drawEyes();
 }
-
-// Draws bottom part of snowmen(base)
-function drawBase() {
-  dot(randomNumber(30, 40));
+function drawBase(size) {
+  dot(size);
   moveForward(50);
 }
-// Draws middle part of snowmen(body)
-function drawBody() {
-  dot(randomNumber(20, 26));
+function drawBody(size) {
+  dot(size);
   moveForward(36);
 }
-// Draws top part of snowmen(head)
-function drawHead() {
-  dot(randomNumber(16, 19));
+function drawHead(size) {
+  dot(size);
 }
-//// Draws snowmens eye's
 function drawEyes() {
   penColor("black");
   turnRight(90);
@@ -134,18 +127,18 @@ function drawEyes() {
   dot(3);
   turnTo(0);
 }
-//drawsSnowFlake
 function drawSnow() {
   penRGB(255, 255, 255, 0.43);
   dot(randomNumber(1, 6));
 }
-//Draws SnowFlakes
 function drawAllSnow() {
   for (var i = 0; i < 100; i++) {
     moveTo(randomNumber(-5, 350), randomNumber(-5, 430));
     drawSnow();
   }
 }
+
+//Order matters.  Must be pine trees 1st then the snowflakes.  
 
 //The loop is for as many snowflakes you want to draw. 
 //And it is all in random places because of the "moveTo"
@@ -157,7 +150,6 @@ function drawAllSnowflakes() {
     drawSnowflake();
   }
 }
-
 //The proccess of drawing the snowflake. (I wouldn't mess with the order)
 function drawSnowflake() {
   penRGB(255, 255, 255, 0.6);
