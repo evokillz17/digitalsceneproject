@@ -1,5 +1,16 @@
+drawBackground();
+allStars();
+drawAllmountains(10);
+drawAllpinetrees();
+drawAllSnowmen();
+drawAllSnow();
+drawAllSnowflakes();
+drawAuroralights();
+snowFloor();
+
 //Draws Mountain
 function drawMountain(location) {
+ //Made by Eduardo
  penColor(rgb(100,65,36));
  penWidth(40);
  penUp();
@@ -15,6 +26,7 @@ function drawMountain(location) {
 }
 //draws all mountains
 function drawAllmountains() {
+  //Made by Edaurdo
   penUp();
   for (var i = 0; i < 3; i++) {
   drawMountain(randomNumber(-150,150));
@@ -22,6 +34,7 @@ function drawAllmountains() {
 }
 //draws snow on tips
 function drawTip() {
+  //Made by Eduardo
   penWidth(45);
   penRGB(236, 240, 241);
   turnTo(154);
@@ -32,6 +45,7 @@ function drawTip() {
   penUp();
 }
 function colorMountain() {
+  //Made by Eduardo
   penWidth(40);
   turnTo(270);
   moveForward(185);
@@ -44,12 +58,14 @@ function colorMountain() {
 
 //draws Background
  function drawBackground() {
+ //Made by Eduardo
  penRGB(44, 62, 80);
  dot(300);
 }
 
 //draws snow floor
 function snowFloor() {
+ //Made by Eduardo
  penRGB(236, 240, 241);
  penWidth(60);
  penUp();
@@ -61,6 +77,7 @@ function snowFloor() {
 }
 //darws Aurora lights
 function drawAuroralights(){
+  //Made by Eduardo
   for (var i = 0; i < 65; i++) {
   penUp();
   moveTo(randomNumber(-5,320),randomNumber(80,110 ));
@@ -70,6 +87,7 @@ function drawAuroralights(){
 }
 //draws rays for aurora
 function drawRay(size){
+  //Made by Eduardo
   penDown();
   penWidth(randomNumber(3,10));
   penRGB(randomNumber(100, 190), randomNumber(120, 196), randomNumber(50, 198),0.6);
@@ -82,7 +100,8 @@ function drawRay(size){
 }
 //draws background stars
 function allStars() {
-  for (var i = 0; i < 25; i++) {
+  //Made by Eduardo
+  for (var i = 0; i < 20; i++) {
   penRGB(252, 226, 95, 0.5);
   penUp();
   moveTo(randomNumber(-10,320),randomNumber(-5,415 ));
@@ -90,7 +109,9 @@ function allStars() {
   }
 }
 
+//draws all the Snowmen
 function drawAllSnowmen() {
+  //Made by Natalia
   for (var i = 0; i < 2; i++) {
     moveTo(randomNumber(0, 318), 410);
     turnTo(0);
@@ -99,6 +120,7 @@ function drawAllSnowmen() {
   }
 }
 function drawSnowmen() {
+  //Made by natalia
   penRGB(236, 240, 241, 1);
   drawBase(randomNumber(30, 40));
   drawBody(randomNumber(20, 26));
@@ -106,17 +128,22 @@ function drawSnowmen() {
   drawEyes();
 }
 function drawBase(size) {
+  //Made by Natalia
   dot(size);
   moveForward(50);
 }
 function drawBody(size) {
+  //Made by Natalia
   dot(size);
   moveForward(36);
 }
 function drawHead(size) {
+  //Made by Natalia
   dot(size);
 }
+//// Draws snowmens eye's
 function drawEyes() {
+  //Made by Natalia
   penColor("black");
   turnRight(90);
   moveForward(5);
@@ -127,22 +154,25 @@ function drawEyes() {
   dot(3);
   turnTo(0);
 }
+//drawsSnowFlake
 function drawSnow() {
+  //Made by Natalia
   penRGB(255, 255, 255, 0.43);
   dot(randomNumber(1, 6));
 }
+//Draws SnowFlakes
 function drawAllSnow() {
+  //Made by Natalia
   for (var i = 0; i < 100; i++) {
     moveTo(randomNumber(-5, 350), randomNumber(-5, 430));
     drawSnow();
   }
 }
 
-//Order matters.  Must be pine trees 1st then the snowflakes.  
-
 //The loop is for as many snowflakes you want to draw. 
 //And it is all in random places because of the "moveTo"
 function drawAllSnowflakes() {
+  //Made by Seleste
   for (var i = 0; i < 50; i++) {
     penUp();
     moveTo(randomNumber(0,325), randomNumber(0,360));
@@ -150,8 +180,10 @@ function drawAllSnowflakes() {
     drawSnowflake();
   }
 }
+
 //The proccess of drawing the snowflake. (I wouldn't mess with the order)
 function drawSnowflake() {
+  //Made by Seleste
   penRGB(255, 255, 255, 0.6);
   penWidth(2);
   drawCross();
@@ -165,6 +197,7 @@ function drawSnowflake() {
 
 //Draws the one of the 4 sides of the snowflake.  
 function drawCross() {
+  //Made by Seleste
   drawLongLeg(5);
   drawPegs(3);
 }
@@ -173,11 +206,13 @@ function drawCross() {
 //"legLength" is how long the little stick is going to be.
 //Get a smaller number to make small snowflakes, a bigger # for big snowflakes.  
 function drawLongLeg(legLength) {
+  //Made by Seleste
   moveForward(legLength);
   moveForward(legLength);
   turnLeft();
 }
 function turnAround() {
+  //Made by Seleste
   turnLeft();
   turnLeft();
 }
@@ -185,6 +220,7 @@ function turnAround() {
 //The "pegLength" is used with the formula of the lehLength-2 pixels.  To get a good snowflake each time. 
 //pegLength = legLength - 2 pixels 
 function drawPegs(pegLength) {
+  //Made by Seleste
   for (var i = 0; i < 3; i++) {
     moveForward(pegLength);
     turnAround();
@@ -195,6 +231,7 @@ function drawPegs(pegLength) {
 
 //resetToCenter has to be the same parameter as drawLongLeg so it can get to the middle of the snowflake each time to draw a new side.   time.  
 function resetToCenter(legLength) {
+  //Made by Seleste
   moveForward(legLength);
   moveForward(legLength);
   turnLeft();
@@ -207,11 +244,13 @@ function drawAllpinetrees() {
     moveTo(randomNumber(0, 318), 415);
     turnTo(0);
     drawPinetree();
+    //Made by Seleste
   }
 
 }
 //draws one pine tree
 function drawPinetree() {
+    //Made by Seleste
     drawTrunk(randomNumber(20,40 ));
     turnTo(0);
     drawLeaves();
@@ -225,6 +264,7 @@ function drawPinetree() {
 
 //Every trunk has a different width.  Because I put the random number generator so you don't have to change that parameter.  
 function drawTrunk(trunkWidth) {
+  //Made by Seleste
   penUp();
   penRGB(124, 89, 8, 1);
   penWidth(trunkWidth);
@@ -233,6 +273,7 @@ function drawTrunk(trunkWidth) {
 }
 //Draws the freen triangle to represent the leaves.
 function drawLeaves() {
+  //Made by Seleste
   penRGB(8, 124, 10, 1);
   penWidth(25);
   penDown();
@@ -242,26 +283,17 @@ function drawLeaves() {
   turnLeft (180);
   moveForward(35);
   turnRight(90);
+  penUp();
   moveForward(45);
   turnRight(135);
   moveForward(62);
-  penUp();
 }
 //This was made to you can put a green triangle on top of another green triangle so that they're not all over the place.  
 function backToTheTop() {
+  //Made by Seleste
   turnRight(90);
   moveForward(40);
   turnRight(90);
   moveForward(30);
   turnLeft(90);
 }
-
-drawBackground();
-allStars();
-drawAllmountains(10);
-drawAllpinetrees();
-drawAllSnowmen();
-drawAllSnow();
-drawAllSnowflakes();
-drawAuroralights();
-snowFloor();
