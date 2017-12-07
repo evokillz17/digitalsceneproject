@@ -283,10 +283,10 @@ function drawLeaves() {
   turnLeft (180);
   moveForward(35);
   turnRight(90);
-  penUp();
   moveForward(45);
   turnRight(135);
   moveForward(62);
+  penUp();
 }
 //This was made to you can put a green triangle on top of another green triangle so that they're not all over the place.  
 function backToTheTop() {
